@@ -1,10 +1,13 @@
 package com.baracoin.architecuture_components.entity;
 
+import android.arch.persistence.room.Entity;
+
 /**
  * Created by PMohale on 2018/06/10.
  */
 
-public class Contact {
+@Entity(tableName = "contact")
+public class Contact extends  PersistableEntity{
 
     private String name;
     private String email;
