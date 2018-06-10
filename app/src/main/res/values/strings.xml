@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">architecuture_components</string>
+    <string name="title_activity_contacts_list">ContactsListActivity</string>
 </resources>

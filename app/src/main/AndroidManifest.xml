@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.list.ContactsListActivity"
+            android:label="@string/title_activity_contacts_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.add.AddContactActivity"></activity>
     </application>
 
 </manifest>
