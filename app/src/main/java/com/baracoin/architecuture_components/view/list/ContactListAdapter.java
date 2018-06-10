@@ -20,13 +20,11 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactViewHolder> 
     private final Context context;
     private List<Contact> contacts;
     private View.OnClickListener deleteContactClickListener;
-    private View.OnClickListener veiwContactClickListener;
 
-    public ContactListAdapter(Context context, List<Contact> contacts, View.OnClickListener deleteContactClickListener, View.OnClickListener veiwContactClickListener) {
+    public ContactListAdapter(Context context, List<Contact> contacts, View.OnClickListener deleteContactClickListener) {
         this.context = context;
         this.contacts = contacts;
         this.deleteContactClickListener = deleteContactClickListener;
-        this.veiwContactClickListener = veiwContactClickListener;
     }
 
     @Override
@@ -49,5 +47,10 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactViewHolder> 
     @Override
     public int getItemCount() {
         return contacts.size();
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+        notifyDataSetChanged();
     }
 }

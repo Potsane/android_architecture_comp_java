@@ -1,5 +1,6 @@
 package com.baracoin.architecuture_components.injection;
 
+import com.baracoin.architecuture_components.view.add.AddContactActivity;
 import com.baracoin.architecuture_components.view.list.ContactsListActivity;
 
 import dagger.Module;
@@ -14,4 +15,7 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract ContactsListActivity bindContactsListActivity();
+
+    @ContributesAndroidInjector
+    abstract AddContactActivity bindAddContactActivity();
 }

@@ -2,6 +2,7 @@ package com.baracoin.architecuture_components.injection;
 
 import android.arch.lifecycle.ViewModel;
 
+import com.baracoin.architecuture_components.view.add.AddContactViewModel;
 import com.baracoin.architecuture_components.view.list.ContactListViewModel;
 
 import dagger.Binds;
@@ -19,4 +20,9 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ContactListViewModel.class)
     abstract ViewModel bindContactsListViewModel(ContactListViewModel contactListViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddContactViewModel.class)
+    abstract ViewModel bindAddContactViewModel(AddContactViewModel addContactViewModel);
 }

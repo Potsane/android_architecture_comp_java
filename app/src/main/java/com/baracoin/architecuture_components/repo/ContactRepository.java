@@ -14,9 +14,9 @@ import io.reactivex.Completable;
 
 public interface ContactRepository {
 
-    LiveData<Contact> addContact(Contact contact);
+    Completable addContact(Contact contact);
 
-    Completable deleteContact(long id);
+    Completable deleteContact(Contact contact);
 
     LiveData<List<Contact>> getAllContacts();
 }

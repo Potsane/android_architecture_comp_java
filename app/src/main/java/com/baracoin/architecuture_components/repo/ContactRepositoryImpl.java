@@ -2,9 +2,12 @@ package com.baracoin.architecuture_components.repo;
 
 import android.arch.lifecycle.LiveData;
 
+import com.baracoin.architecuture_components.database.dao.ContactDao;
 import com.baracoin.architecuture_components.entity.Contact;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 import io.reactivex.Completable;
 
@@ -14,18 +17,25 @@ import io.reactivex.Completable;
 
 public class ContactRepositoryImpl implements ContactRepository {
 
-    @Override
-    public LiveData<Contact> addContact(Contact contact) {
-        return null;
+    @Inject
+    ContactDao contactDao;
+
+    public ContactRepositoryImpl(ContactDao contactDao) {
+        this.contactDao = contactDao;
     }
 
     @Override
-    public Completable deleteContact(long id) {
-        return null;
+    public Completable addContact(Contact contact) {
+        return Completable.fromAction(() -> contactDao.addContact(contact));
+    }
+
+    @Override
+    public Completable deleteContact(Contact contact) {
+        return Completable.fromAction(()-> contactDao.deleteContact(contact));
     }
 
     @Override
     public LiveData<List<Contact>> getAllContacts() {
-        return null;
+        return contactDao.getAllContacts();
     }
 }
